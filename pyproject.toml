@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "opensd_project_YOUR_USERNAME_HERE"
+version = "0.0.1"
+authors = [
+    { name="Klemen Zaletelj", email="klemen.zaletelj@fs.uni-lj.si" },
+    { name="Domen Gorjup", email="domen.gorjup@fs.uni-lj.si" },
+    { name="Janko Slavič", email="janko.slavic@fs.uni-lj.si" },
+]
+description = "Example open-source project for OpenSD2023 summer school."
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+keywords = ["OpenSD2023", "example", "project"]
+dynamic = ["dependencies"]
+
+
+[project.optional-dependencies]
+dev = [
+    'sphinx',
+    'twine',
+    'wheel',
+    'pytest',
+    'sphinx-rtd-theme',
+]
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
