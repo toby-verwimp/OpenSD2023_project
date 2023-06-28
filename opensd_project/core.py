@@ -51,7 +51,7 @@ def translation(x, y, p, g):
     """
     dx, dy = p
     h, w = g.shape
-    spl = interp2d(np.arange(w), np.arange(h), g, kind='cubic')
+    spl = interp2d(np.arange(w), np.arange(h), g, kind='linear')
     return spl(x + dx, y + dy)
 
 
