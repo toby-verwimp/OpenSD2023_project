@@ -43,7 +43,7 @@ def animate_video(images, fps=30, bit_depth=12):
         bit_depth (int): Effective bit depth of the captured images.
 
     Returns:
-        ani: Matplotlib animation object.
+        ani: Matplotlib animation object..
     """
     fig = plt.figure()
     
