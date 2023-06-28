@@ -20,9 +20,9 @@ def show_reference_image(images, points=[], roi_size=None, bit_depth=12):
     """
     fig, ax = plt.subplots()
     ax.imshow(images[0], cmap='gray', vmin=0, vmax=2**bit_depth)
-
+    plt.colorbar()
     if points:
-        ax.scatter(np.array(points)[:, 1], np.array(points)[:, 0], marker='.', color='r')
+        ax.scatter(np.array(points)[:, 1], np.array(points)[:, 0], marker='.', color='b')
         ax.set_title('Reference image with selected points')
         ax.set_xlabel('x^2')
         ax.set_ylabel('y**2')
