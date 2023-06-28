@@ -7,19 +7,23 @@ from pyMRAW import load_video
 from .visualize import animate_video
 
 import warnings
-warnings.filterwarnings("ignore")
 
-# Open file selection window to select the MRAW video file
-window = Tk()
-filename = askopenfilename(parent=window, title='Select the .cih file', filetypes=[
-    ("Photron cih file", "*.cih"), ("Photron cihx file", "*.cihx")])
+# Irrespective of file name, you need this.
+if __name__ == "__main__":
 
-# Close the Tk window
-window.destroy()
+    warnings.filterwarnings("ignore")
 
-# Load the video
-images, cih = load_video(filename)
+    # Open file selection window to select the MRAW video file
+    window = Tk()
+    filename = askopenfilename(parent=window, title='Select the .cih file', filetypes=[
+        ("Photron cih file", "*.cih"), ("Photron cihx file", "*.cihx")])
 
-# Show the animation
-ani = animate_video(images, fps=30, bit_depth=cih['EffectiveBit Depth'])
-plt.show()
+    # Close the Tk window
+    window.destroy()
+
+    # Load the video
+    images, cih = load_video(filename)
+
+    # Show the animation
+    ani = animate_video(images, fps=30, bit_depth=cih['EffectiveBit Depth'])
+    plt.show()
